@@ -1,0 +1,32 @@
+{
+    "menues": [
+        {
+            "id": 3,
+            "titulo": "Espárragos blancos",
+            "detalle": "Espárragos blancos con vinagreta de verduras y jamón ibérico",
+            "precio": "U$S 37.50",
+            "img": "/images/esparragos.png"
+        },
+        {
+            "id": 4,
+            "titulo": "Carpaccio de salmón",
+            "detalle": "Salmón ahumado con algunas cositas que se me borraron",
+            "precio": "U$S 50.80",
+            "img": "/images/Carpaccio-de-salmon.jpg"
+        },
+        {
+            "id": "10",
+            "titulo": "dfgarg",
+            "detalle": "sdg<sdg<sg",
+            "precio": "1000",
+            "img": ""
+        },
+        {
+            "id": "50",
+            "titulo": "hst",
+            "detalle": "fhgzsdgg",
+            "precio": "3000",
+            "img": ""
+        }
+    ]
+}

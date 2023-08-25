@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pimienta & sal</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <!-- Navbar (sit on top) -->
+    <%- include ("./partials/nav") %>
+
+    <!-- Header -->
+    <%- include ("./partials/header") %>
+
+
+       <!-- Formulario de búsqueda -->
+
+<div style="width: 100%; margin: 50px;">
+  <form action="/search" method="get">
+    <input type="text" name="busqueda">
+    <input type="submit" value="Buscar">
+  </form>
+</div>
+
+    <!-- Page content -->
+    <div class="ps-content">
+      <!-- About Section -->
+      <div class="ps-row ps-padding-64" id="about">
+        <div class="ps-col m6 ps-padding-large ps-hide-small">
+          <img
+            src="/images/principal.jpg"
+            class="ps-round ps-image ps-opacity-min"
+            alt="SAbores que enamoran"
+            width="600"
+            height="750"
+          />
+        </div>
+  
+
+        <div class="ps-col m6 ps-padding-large">
+          <h1 class="ps-center">Pimienta & Sal</h1>
+          <br />
+          <p class="ps-large">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute iruredolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur.We only use
+            <span class="ps-tag ps-light-grey">seasonal</span> ingredients.
+          </p>
+          <p class="ps-large ps-text-grey ps-hide-medium">
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum consectetur adipiscing
+            elit, sed do eiusmod temporincididunt ut labore et dolore magna
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+      </div>
+
+      <hr />
+      <!-- Menu Section -->
+     
+
+      <div class="ps-row ps-padding-64" id="menu">
+        <div class="ps-col l6 ps-padding-large">
+          <h1 class="ps-center">Nuentro Menu</h1>
+          <br />
+
+          <% for (let menu of menues) { %>
+            <h4> <%= menu.titulo %> </h4>
+            <p class="ps-text-grey">
+              <%= menu.detalle %> <%= menu.precio %>
+            </p>
+          <% } %>
+        </div>
+
+        <div class="ps-col l6 ps-padding-large ps-img-menu">
+          <img
+            src="/images/menu.jpg"
+            class="ps-round ps-image ps-opacity-min"
+            alt="Menu"
+          />
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <%- include ("./partials/footer") %>
+      
+    </div>
+  </body>
+</html>
