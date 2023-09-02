@@ -1,3 +1,15 @@
+.letter-gral{
+    font-family: "Segoe UI", Arial, sans-serif;
+    letter-spacing: 2px;
+}
+
+.display-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .caja-grande {
     background-color: gainsboro; 
@@ -20,25 +32,25 @@
 }
 
 .title-form {
-    font-family: Arial, Helvetica, sans-serif;
     color: #FD611A;
-    font-weight: bolder;
-    font-size: x-large;
+    font-weight: bold;
+    font-size: large;
     margin-bottom: 20px;
 }
 
 .label-form {
     text-align: start;
     font-size:medium;
-    font-weight: bolder;
     width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 25px 0px 10px 0px;
+    font-family: "Segoe UI", Arial, sans-serif;
+    letter-spacing: 2px;
+    margin-top: 10px;
 }
 
 .input-form {
     width: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
+    letter-spacing: 2px;
     background-color: gainsboro;
     border: none;
     height: 35px;
@@ -58,23 +70,17 @@
     padding: 5px;
 }
 
-.div-button {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
-    
-}
 .button-form {
+    font-family: "Segoe UI", Arial, sans-serif;
+    letter-spacing: 2px;
     background-color:#FD611A;
     color: white;
     border: none;
     padding: 5px;
     border-radius: 5px;
-    width: 49%;
+    width: 35%;
     transition: 1s;
+    margin: 10px;
 }
 
 .button-form:hover {

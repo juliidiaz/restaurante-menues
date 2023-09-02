@@ -11,9 +11,25 @@
     <%- include ("./partials/nav") %>
 
     <!--resultadodebusqueda-->
-    <h3>Resultados:</h3>
-    <ul>
-      <% for (let resultado of resultados) { %>
-        <li><%= resultado.titulo %></li>
+    <h4 class="titulo-recuadro" style="margin: 10px;">Resultados:</h3> 
+
+      <div class="search-gral">
+      <% for (let resultado of resultados) { %>        <div class="recuadro-search">
+        <a href="/editar/<%=resultado.id%>">
+          <div class="titulo-recuadro">
+            <%= resultado.titulo %>
+          </div>
+          <div class="desc-recuadro">
+            <%= resultado.detalle %>
+          </div>
+          <div class="precio-recuadro">
+            <%= resultado.precio %>
+          </div>
+          <div class="img-recuadro" style="background-image: url(/images/<%=resultado.img%>);">
+          </div>  
+        </a>         
+      </div>
+     
       <% } %>
-    </ul>
+    </div>
+

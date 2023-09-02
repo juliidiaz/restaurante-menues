@@ -1,32 +1,39 @@
 {
     "menues": [
         {
-            "id": 3,
+            "id": 1,
             "titulo": "Espárragos blancos",
             "detalle": "Espárragos blancos con vinagreta de verduras y jamón ibérico",
             "precio": "U$S 37.50",
-            "img": "/images/esparragos.png"
+            "img": "header.jpg"
         },
         {
-            "id": 4,
+            "id": 2,
             "titulo": "Carpaccio de salmón",
             "detalle": "Salmón ahumado con algunas cositas que se me borraron",
             "precio": "U$S 50.80",
-            "img": "/images/Carpaccio-de-salmon.jpg"
+            "img": "Carpaccio-de-salmon.jpg"
         },
         {
-            "id": "10",
-            "titulo": "dfgarg",
-            "detalle": "sdg<sdg<sg",
-            "precio": "1000",
-            "img": ""
+            "id": 3,
+            "titulo": "Mousse de arroz",
+            "detalle": "Mousse de Arroz con un leve toque a limón y vainilla",
+            "precio": "U$S 25.50",
+            "img": "Mousse-de-arroz-con-leche.jpg"
         },
         {
-            "id": "50",
-            "titulo": "hst",
-            "detalle": "fhgzsdgg",
-            "precio": "3000",
-            "img": ""
+            "id": 4,
+            "titulo": "Rissotto de Berenjenas",
+            "detalle": "Rissoto con laminas de berenjenas salteadas en almibar de vino tinto",
+            "precio": "U$S 89.90",
+            "img": "Risotto-berenjena-queso-cabra.jpg"
+        },
+        {
+            "id": 5,
+            "titulo": "Milanesa a caballo",
+            "precio": "U$S 50.98",
+            "img": "menu-1693434794767.jpg",
+            "detalle": "Milanesa con huevo frito y papas fritas con un toque de algo"
         }
     ]
 }

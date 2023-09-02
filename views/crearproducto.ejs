@@ -12,29 +12,27 @@
      <body>
         <div class="caja-grande" >
             <div class="box-form">
-              <div class="title-form">FORMULARIO DE CREACIÓN</div>
+              <div class="title-form letter-gral">FORMULARIO DE CREACIÓN</div>
 
-                <form action="/product/crear" method="post" class="formulario" style="width: 100%;">
-
-                    <label for="id" class="label-form">ID</label>
-                    <input type="number" name="id" required class="input-form">
+                <form action="/product/crear" method="post" class="formulario" enctype="multipart/form-data" style="width: 100%;">
                     
                     <label for="title" class="label-form">NOMBRE DEL PRODUCTO</label>
-                    <input type="text" name="title" required class="input-form">
-
+                    <input type="text" name="titulo" class="input-form">
+                    
+                    <!--la vista tiene acceso a variables locales, una de ellas es LOCAL que carga lo que le mandamos de la lógica a la vista(como res.query, res.params)-->
+              
                     <label for="description" class="label-form">DETALLE</label>
-                    <textarea name="description" id="descripcion" cols="30" rows="10" placeholder="Escriba una descripción de producto..." required class="input-form" style="height:90px;"></textarea>
+                    <textarea name="description" id="descripcion" cols="30" rows="10" placeholder="Escriba una descripción de producto..." class="input-form" style="height:90px;"></textarea>
 
                     <label for="price" class="label-form">PRECIO</label>
-                    <input type="text" name="price" required class="input-form">
+                    <input type="text" name="precio" class="input-form">
 
                     <label for="image" class="label-form">IMAGENES</label>
-                    <input type="file" name="image">
+                    <input type="file" name="img" value="U$S" class="input-form">
 
-                    <div class="div-button">
+                    <div class="display-center">
                         <button type="submit" class="button-form">SUBIR PRODUCTO</button>
-                        <button type="submit" class="button-form">ELIMINAR PRODUCTO</button> 
-                      </div>
+                    </div>
             
                 </form>
             </div>

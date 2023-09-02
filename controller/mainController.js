@@ -3,7 +3,7 @@ let {menues}=dataBase;
 const fs=require ("fs");
 const path = require ("path");
 const dataFile = path.join(__dirname, "..", "dataBase", "data.json");
-const { log } = require("console");
+
 
 const mainController = {
     home: (req, res) => {
@@ -27,17 +27,7 @@ const mainController = {
         res.render("crearproducto")
     },
     subir: (req, res) => {
-        const { id, title, description, price, image } = req.body;
-        const menuNuevo= {
-            id,
-            titulo:title,
-            detalle: description,
-            precio: price,
-            img: image
-        }     
-        menues.push(menuNuevo);
-        fs.writeFileSync(dataFile, JSON.stringify(dataBase));  
-        res.redirect("/")            
+        res.redirect("/")     
     },
     
     edicion: (req,res)=>{
@@ -48,7 +38,6 @@ const mainController = {
     },
 
     editar: (req,res)=>{
-        console.log("esta es la ruta de edición");
         const { title, description, price, image } = req.body;
         const {id} = req.params;
         const productoId=menues.find((element)=>{
@@ -66,9 +55,6 @@ const mainController = {
     },
     eliminar: (req,res)=>{
         const {id} = req.params;
-        const productoId=menues.find((element)=>{
-            return element.id == id
-        });
         menues = menues.filter((element)=>{
             return element.id != id
         })
