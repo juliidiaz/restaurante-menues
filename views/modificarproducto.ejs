@@ -17,17 +17,17 @@
                 <form action="/editar/<%=producto.id%>?_method=put" method="post" class="formulario" style="width: 100%;">
 
                     
-                    <label for="title" class="label-form">NOMBRE DEL PRODUCTO</label>
-                    <input type="text" name="title" value="<%=producto.titulo%>" required class="input-form">
+                    <label for="titulo" class="label-form">NOMBRE DEL PRODUCTO</label>
+                    <input type="text" name="titulo" value="<%=producto.titulo%>" required class="input-form">
 
-                    <label for="description" class="label-form">DETALLE</label>
-                    <textarea name="description" id="descripcion" cols="30" rows="10" required class="input-form" style="height:90px;"><%=producto.detalle%></textarea>
+                    <label for="detalle" class="label-form">DETALLE</label>
+                    <textarea name="detalle" id="detalle" cols="30" rows="10" required class="input-form" style="height:90px;"><%=producto.detalle%></textarea>
 
-                    <label for="price" class="label-form">PRECIO</label>
-                    <input type="text" name="price" required class="input-form" value="<%=producto.precio%>">
+                    <label for="precio" class="label-form">PRECIO</label>
+                    <input type="text" name="precio" required class="input-form" value="<%=producto.precio%>">
 
-                    <label for="image" class="label-form">IMAGENES</label>
-                    <input type="file" name="image" >
+                    <label for="img" class="label-form">IMAGENES</label>
+                    <input type="file" name="img" >
 
                     <div class="display-center">
                         <button type="submit" class="button-form">EDITAR PRODUCTO</button>

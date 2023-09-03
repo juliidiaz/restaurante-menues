@@ -16,19 +16,39 @@
 
                 <form action="/product/crear" method="post" class="formulario" enctype="multipart/form-data" style="width: 100%;">
                     
-                    <label for="title" class="label-form">NOMBRE DEL PRODUCTO</label>
-                    <input type="text" name="titulo" class="input-form">
-                    
+                    <label for="titulo" class="label-form">NOMBRE DEL PRODUCTO</label>
+                    <input type="text" name="titulo" class="input-form" value="<%=(locals.old && old.titulo ) ? old.titulo : '' %>">
                     <!--la vista tiene acceso a variables locales, una de ellas es LOCAL que carga lo que le mandamos de la lógica a la vista(como res.query, res.params)-->
-              
-                    <label for="description" class="label-form">DETALLE</label>
-                    <textarea name="description" id="descripcion" cols="30" rows="10" placeholder="Escriba una descripción de producto..." class="input-form" style="height:90px;"></textarea>
 
-                    <label for="price" class="label-form">PRECIO</label>
-                    <input type="text" name="precio" class="input-form">
+                    <div class="msj-error">
+                      <% if (locals.errors && errors.titulo) {%>
+                        <%=errors.titulo.msg%>
+                      <%}%>
+                    </div>                   
+                    
+                    <label for="detalle" class="label-form">DETALLE</label>
+                    <textarea name="detalle" id="descripcion" cols="30" rows="10" class="input-form" style="height:90px;"><%=(locals.old && old.detalle ) ? old.detalle : '' %></textarea>
+                    <div class="msj-error">
+                      <% if (locals.errors && errors.detalle) {%>
+                        <%=errors.detalle.msg%>
+                      <%}%>
+                    </div>            
 
-                    <label for="image" class="label-form">IMAGENES</label>
-                    <input type="file" name="img" value="U$S" class="input-form">
+                    <label for="precio" class="label-form">PRECIO</label>
+                    <input type="text" name="precio" class="input-form" value="<%=(locals.old && old.precio ) ? old.precio : '' %>">
+                    <div class="msj-error">
+                      <% if (locals.errors && errors.precio) {%>
+                        <%=errors.precio.msg%>
+                      <%}%>
+                    </div>            
+
+                    <label for="img" class="label-form">IMAGENES</label>
+                    <input type="file" name="img" class="input-form">
+                    <div class="msj-error">
+                      <% if (locals.img && img.precio) {%>
+                        <%=errors.precio.msg%>
+                      <%}%>
+                    </div> 
 
                     <div class="display-center">
                         <button type="submit" class="button-form">SUBIR PRODUCTO</button>

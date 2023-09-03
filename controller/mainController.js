@@ -1,5 +1,4 @@
-const dataBase=require("../dataBase/data.json");
-let {menues}=dataBase;
+let menues=require("../dataBase/data.json");
 const fs=require ("fs");
 const path = require ("path");
 const dataFile = path.join(__dirname, "..", "dataBase", "data.json");
@@ -7,7 +6,7 @@ const dataFile = path.join(__dirname, "..", "dataBase", "data.json");
 
 const mainController = {
     home: (req, res) => {
-        res.render("index", {menues:menues});
+        res.render("index", {menues});
     },
     detalleMenu: (req, res) => {
         const {id} = req.params;
@@ -18,8 +17,8 @@ const mainController = {
     },
     search: (req, res) => {
         const busquedadeUsuario = req.query.busqueda;
-        const resultados = menues.filter((valorEnI) => {
-            return valorEnI.titulo.includes(busquedadeUsuario)
+        const resultados = menues.filter((e) => {
+            return e.titulo.includes(busquedadeUsuario)
         })
        res.render("search", { resultados: resultados });
       },
@@ -27,7 +26,7 @@ const mainController = {
         res.render("crearproducto")
     },
     subir: (req, res) => {
-        res.redirect("/")     
+        res.redirect("/search/?busqueda=")     
     },
     
     edicion: (req,res)=>{
@@ -38,30 +37,34 @@ const mainController = {
     },
 
     editar: (req,res)=>{
-        const { title, description, price, image } = req.body;
+        const { titulo, detalle, precio, img } = req.body;
         const {id} = req.params;
-        const productoId=menues.find((element)=>{
-            return element.id == id
+        const productoId=menues.find((e)=>{
+            return e.id == id
         });
+        console.log(productoId);
         
-        title ? productoId.titulo = title: productoId.titulo;
-        description ? productoId.detalle = description: productoId.detalle;
-        price ? productoId.precio = price: productoId.precio;
-        image ? productoId.img = image: productoId.img;
+        titulo ? productoId.titulo = titulo: productoId.titulo;
+        detalle ? productoId.detalle = detalle: productoId.detalle;
+        precio ? productoId.precio = precio: productoId.precio;
+        if (req.file) {
+            productoId.img = req.file.filename; // Usar el nombre generado por multer
+        }
+        console.log(req.file);
 
-        fs.writeFileSync(dataFile, JSON.stringify(dataBase));  
+        fs.writeFileSync(dataFile, JSON.stringify(menues));  
 
-        res.redirect("/")
+        res.redirect("/search/?busqueda=")
     },
     eliminar: (req,res)=>{
         const {id} = req.params;
-        menues = menues.filter((element)=>{
+        nuevoMenu = menues.filter((element)=>{
             return element.id != id
         })
-        dataBase.menues=menues;
-        fs.writeFileSync(dataFile, JSON.stringify(dataBase));
+        menues=nuevoMenu;
+        fs.writeFileSync(dataFile, JSON.stringify(menues));
 
-        res.redirect ("/");
+        res.redirect ("/search/?busqueda=");
         
     }
 }
