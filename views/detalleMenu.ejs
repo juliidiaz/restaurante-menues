@@ -3,6 +3,7 @@
   <head>
     <title>Pimienta & sal</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/create.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
@@ -10,22 +11,26 @@
     <!-- Navbar (sit on top) -->
     <%- include ("./partials/nav") %>
     
-    <!-- Header -->
-    <%- include ("./partials/header") %>
-
     <!-- Page content -->
     <div class="ps-content">
-
-    <!-- Menu Section -->
-    <div class="ps-row ps-padding-64" id="menu">
-      <div class="ps-col l6 ps-padding-large">
-        <h1 class="ps-center"><%= detalleMenu.titulo %></h1>
-        <br />
-        <h4><%= detalleMenu.detalle %></h4>
-        <p class="ps-text-grey">
-          <%= detalleMenu.precio%>
-        </p>
-      </div>
+      
+      <!-- Menu Section -->
+      <div class="ps-row ps-padding-64" id="menu">
+        <div class="ps-col l6 ps-padding-large">
+          <h1 class="ps-center"><%= detalleMenu.titulo %></h1>
+          <br />
+          <h4><i><%= detalleMenu.detalle %></i></h4>
+          <p class="ps-text-grey" style="font-size: larger;">
+            U$S <%= detalleMenu.precio%>
+          </p>
+          <div class="container-button" style="width: 100%; display: flex; align-items: center; justify-content: center;">
+            <a href="/editar/<%=detalleMenu.id%>" class="button-form display-center">Editar menu</a>
+            <form action="/editar/<%=detalleMenu.id%>?_method=delete" method="post">
+              <button type="submit" class="button-form display-center">Eliminar menu</button> 
+            </form>
+          </div>
+          
+        </div>
 
       <div class="ps-col l6 ps-padding-large ps-img-menu">
         <img

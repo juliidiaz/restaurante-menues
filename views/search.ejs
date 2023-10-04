@@ -21,7 +21,7 @@
       <% for (let resultado of resultados) { %>     
         <div class="col-12 col-md-6 search-gral">
           <div class="recuadro-search">
-            <a href="/editar/<%=resultado.id%>">
+            <a href="/menu/<%=resultado.id%>">
             <div class="titulo-recuadro">
               <%= resultado.titulo %>
             </div>
@@ -29,7 +29,7 @@
               <%= resultado.detalle %>
             </div>
             <div class="precio-recuadro">
-              <%= resultado.precio %>
+              U$S <%= resultado.precio %>
             </div>
             <div class="img-recuadro" style="background-image: url(/images/<%=resultado.img%>);">
             </div>  

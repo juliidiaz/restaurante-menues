@@ -14,7 +14,7 @@
             <div class="box-form">
               <div class="title-form letter-gral">FORMULARIO DE MODIFICACIÓN</div>
 
-                <form action="/editar/<%=producto.id%>?_method=put" method="post" class="formulario" style="width: 100%;">
+              <form action="/editar/<%=producto.id%>?_method=put" method="post" class="formulario" style="width: 100%;" enctype="multipart/form-data">
 
                     
                     <label for="titulo" class="label-form">NOMBRE DEL PRODUCTO</label>
@@ -30,12 +30,12 @@
                     <input type="file" name="img" >
 
                     <div class="display-center">
-                        <button type="submit" class="button-form">EDITAR PRODUCTO</button>
+                        <button type="submit" class="button-form">Editar menu</button>
                     </div>
             
                 </form>
                 <form action="/editar/<%=producto.id%>?_method=delete" method="post" style="width: 100%;" class="display-center">
-                  <button type="submit" class="button-form">ELIMINAR PRODUCTO</button> 
+                  <button type="submit" class="button-form">Eliminar menu</button> 
                 </form>
             </div>
         </div>

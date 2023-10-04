@@ -1,5 +1,4 @@
 const {body,validationResult}=require("express-validator");
-let menues = require("../dataBase/data.json");
 const fs = require ("fs");
 const path = require ("path");
 const multer = require("multer");
@@ -35,18 +34,7 @@ const upload =multer({storage})
 const resultadoValidacion = (req, res, next) => {
     const errors = validationResult(req);    
     if (errors.isEmpty()) {
-        const nuevoMenu= {
-            id: menues.length + 1,            
-            img: req.file.filename,
-            ...req.body,
-        }
-
-        /*se agrega al menu*/
-        menues.push(nuevoMenu);
-        /*de js a JSON*/
-        fs.writeFileSync(rutaData, JSON.stringify(menues))
-
-        next();
+       next();
     } else {
         res.render('crearproducto', {
             errors: errors.mapped(),

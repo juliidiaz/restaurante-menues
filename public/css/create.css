@@ -79,15 +79,17 @@
 
 .button-form {
     font-family: "Segoe UI", Arial, sans-serif;
+    font-size: medium;
     letter-spacing: 2px;
     background-color:#FD611A;
     color: white;
     border: none;
-    padding: 5px;
     border-radius: 5px;
-    width: 35%;
+    width: 200px;
+    height: 38px;
     transition: 1s;
-    margin: 10px;
+    text-align: center;
+    margin: 20px;
 }
 
 .button-form:hover {
